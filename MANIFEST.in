@@ -1,0 +1,3 @@
+recursive-include lstm/bitstreams *
+recursive-include lstm/libraries *
+recursive-include lstm/datasets *

@@ -1,0 +1,22 @@
+# Compiled python modules. 
+*.pyc  
+__pycache__
+
+# Setuptools distribution folder. 
+/dist/  
+
+# Python egg metadata, regenerated from source files by setuptools. 
+/*.egg-info
+
+#Notebook checkpoints
+*.ipynb_checkpoints
+
+#obj
+*.o
+
+#VSCode
+.vscode/
+
+#CMake build
+lstm/src/build/
+
