@@ -60,6 +60,7 @@ add_files $config_hwsrcdir/../top.cpp -cflags "-std=c++0x -I$config_lstmlibdir -
 
 add_files -tb $config_lstmhostlibdir/neuron.cpp -cflags "-std=c++0x -O0 -I$config_lstmlibdir -I$config_hwsrcdir -I$config_lstmhostlibdir -Iconfig_lstmdriverlibdir"
 add_files -tb $config_lstmhostlibdir/lstm_inference.cpp -cflags "-std=c++0x -O0 -I$config_lstmlibdir -I$config_hwsrcdir -I$config_lstmhostlibdir -Iconfig_lstmdriverlibdir"
+add_files -tb $config_lstmhostlibdir/input_handling.cpp -cflags "-std=c++0x -O0 -I$config_lstmlibdir -I$config_hwsrcdir -I$config_lstmhostlibdir -Iconfig_lstmdriverlibdir"
 add_files -tb $config_hwsrcdir/../../main.cpp -cflags "-std=c++0x -O0 -I$config_lstmlibdir -I$config_hwsrcdir -I$config_lstmhostlibdir -Iconfig_lstmdriverlibdir"
 
 set_top $config_toplevelfxn
