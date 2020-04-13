@@ -35,25 +35,27 @@
 
 int main(int argc, const char* argv[]) {
 	std::string current_exec_name = argv[0]; // Name of the current exec program
-	std::string first_arge;
-	std::vector<std::string> all_args;
+  	std::string label;
+	float compute_time;
+  	std::ifstream label_file;
 
   	if (argc != 4)
-  		{
-  			cout << "3 parameters are needed: " << endl;
-  			cout << "1 - Alphabet path " << endl;
-  			cout << "2 - Quantized input image" << endl;
-  			cout << "3 - Expected result" << endl;
-  			return 1;
-  		}
+	{
+		std::cout << "3 parameters are needed: " << endl;
+		std::cout << "1 - Alphabet path " << endl;
+		std::cout << "2 - Quantized input image" << endl;
+		std::cout << "3 - Expected result" << endl;
+		return 1;
+	}
 
 	std::string alphabet_path = argv[1];
-	float compute_time;
 	std::string predicted = lstm_ocr_from_file_path(argv[2], alphabet_path.c_str(), &compute_time);
-	printf("Main predicted: %s\n", predicted.c_str());
-	if (!strcmp(predicted.c_str(), argv[3])) return 1;
-
-
+  	label_file.open(argv[3]);
+  	std::getline(label_file, label); 
+	printf("Label = %s\n", label.c_str());
+	printf("Pred  = %s\n", predicted.c_str());
+	if (strcmp(predicted.c_str(), label.c_str()) != 0) 
+		return 1;
 	return 0;
 }
 
